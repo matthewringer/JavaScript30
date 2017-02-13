@@ -20,27 +20,54 @@
     // Regular
 
     // Interpolated
+    console.log('Hello I am a %s string', 'jumbo');
 
     // Styled
+    console.log('%c I am some great text', 'font-size: 50px;');
 
     // warning!
-
+    console.warn('oh noooo!');
     // Error :|
-
+    console.error('Boom!');
     // Info
-
+    console.info('Bannana are yummy!');
     // Testing
-
+    console.assert(1===2,'that is wrong');
     // clearing
-
+    console.clear();
     // Viewing DOM Elements
-
+    const p = document.querySelector('p');
+    console.log(p);
+    console.dir(p);
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old!`);
+      console.groupEnd(`${dog.name}`);
+    });
 
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old!`);
+      console.groupEnd(`${dog.name}`);
+    });
     // counting
-
+    console.count('Matt');
+    console.count('Matt');
+    console.count('Jeff');
+    console.count('Matt');
+    console.count('Matt');
+    console.count('Matt');
     // timing
+    console.time('run loops');
+    for(var i = 0; i < 100000; i++){
 
+    }
+    console.timeEnd('run loops');
   </script>
 </body>
 </html>
