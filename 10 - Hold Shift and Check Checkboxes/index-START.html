@@ -104,6 +104,31 @@
   </div>
 
 <script>
+const checkboxes = [...document.querySelectorAll('input')];
+checkboxes.forEach(c => c.addEventListener('click', checkCheked ));
+
+//click event returns chord keys
+let lastChecked;
+
+function checkCheked(e){
+  console.log(e.shiftKey);
+  if(e.shiftKey){
+    let inbetween = false;
+
+    checkboxes.forEach(c => {
+      // Prevent default checking of all boxes on first selection.
+      if(lastChecked === undefined){ lastChecked = this; return; }
+
+      if(c == this || c == lastChecked) inbetween = !inbetween;
+      
+      // Allow shift+uncheck of boxes.
+      if(inbetween) this.checked = c.checked = lastChecked.checked;
+    });
+  }
+
+  lastChecked = this;
+}
+
 </script>
 </body>
 </html>
