@@ -49,7 +49,8 @@ function scrub(e) {
 function fullscreen(e){
     video.controls = false;
     //video.webkitEnterFullScreen();
-    console.log(video.requestFullscreen);
+    //console.log();
+    
 }
 
 // Wire up controll callbacks
@@ -69,6 +70,3 @@ progressBar.addEventListener('mousedown', ()=> mousedown = true );
 progressBar.addEventListener('mouseup', ()=> mousedown = false );
 video.addEventListener('mouseout', ()=> mousedown = false );
 
-
-// 855 504 0157 
-// Pam
